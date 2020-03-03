@@ -28,6 +28,9 @@ before_install:
   - pip install pipenv
   # do not allow Travis to use standard error for debugging purposes
   - unset _JAVA_OPTIONS
+  - sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends latexmk
+  texlive-fonts-extra texlive-fonts-recommended texlive-latex-base texlive-latex-extra
+  texlive-latex-recommended
 
 # cache to improve build speed
 before_cache:
