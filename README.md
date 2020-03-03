@@ -1,7 +1,7 @@
-# cs580s2020 lab02-starter
+# cs580s2020 lab04-starter
 
 Designed for use with [GitHub Classroom](https://classroom.github.com/), this
-repository contains starter files for lab 02 in CMPSC 580 Spring 2020.
+repository contains starter files for lab 04 in CMPSC 580 Spring 2020.
 Since the Travis builds for this repository will initially fail
 (as evidenced by a red &#x2717; appearing in the commit logs instead of a green
 &#x2714;), the programmer is responsible for completing all of the steps needed
@@ -30,7 +30,9 @@ Your LaTeX should produce a correct PDF, which must be released on GitHub.
 The course instructor will reduce a researcher's grade for this assignment if
 the pdf of your completed proposal document does not properly appear under 
 the "Releases" tab in GitHub before the
-assignment's due date. Unless
+assignment's due date. You can manually create a release by
+using GitHub's web interface; to adopt the manual approach please click the
+"Draft a new release" button in the Releases tab of your GitHub repository. Unless
 you provide the course instructor with documentation of the extenuating
 circumstances that you are facing, no late work will be considered towards your
 grade for this project.
@@ -53,77 +55,7 @@ complete this authorization by following intuitive steps in your web browser.
 You will also need to type the command `travis login --pro` in your terminal
 window when you are in the root of your GitHub repository.
 
-## Security
 
-In order for Travis to automatically upload a PDF of your proposal template
- to GitHub when you tag the commit, you need to
-created your encrypted access token. To complete this task,
-in your GitHub repository for this assignment, you must type the
-command:
-
-`travis setup releases --com --force`
-
-Then, when prompted, please type your username and password for
-GitHub. When asked to give the filename, you can type:
-
-`_build/ProposalPresentation.pdf`.
-
-When asked if you want to deploy from a
-specific repository, you can respond with the answer of "no". Finally, when
-this tool asks if you want to use encryption, please answer with a "yes".
-
-Now, you should have a `.travis.yml` file with a secure access token for your
-GitHub repository for this assignment. Use a text editor to edit this file and
-place the following lines of code at the bottom of it. Please note that you must
-preserve the spacing in the following code segment when you paste it into your
-own `.travis.yml` file. Now, you should be ready to perform a commit with tags
-and see your PDF uploaded to GitHub!
-
-```
-  skip_cleanup: true
-  on:
-    tags: true
-```
-
-## Tagging
-
-Since this repository primarily contains LaTeX source code, the Travis CI
-configuration for it will compile the source code and automatically release a
-PDF of the main file whenever the last commit is associated with a [Git
-Tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging). As such, this will
-cause a PDF file to become available in the listing of the "Releases" listing
-for this repository. All release numbers for your writing in this repository
-should adhere to the [Semantic Versioning](http://semver.org/) standard that
-all GitHub projects are asked to adopt.
-
-Please note that the instructor and the technical leaders will only read the PDF
-by downloading the "tagged" release of the proposal that has a version number greater than
-1.0.0. That is, if your commit is tagged with
-`ProposalPresentation-jjumadinova-1.0.0`, then the file
-`ProposalPresentation.pdf` should be available for download in the
-"Releases" tab in your GitHub repository for this project under the name
-`ProposalPresentation-jjumadinova-1.0.0`.
-
-Once you have finished making  small changes to the
-document, you should commit your file using a `git
-commit` command. Now, to create your first tag for this repository you could
-type `git tag ProposalPresentation-jjumadinova-0.1.0`. Of course, you should
-substitute your user name for `jjumadinova` when you create the tag. At this point,
-you are ready to push your changes with the appropriate tag by typing the
-command `git push -u origin master --tags`. After waiting for a period of time,
-you should see that your GitHub repository features a new release of the
-document that you must create for this project.
-
-When you make subsequent changes to your files and perform commits and you are
-ready to release a new version of `senior_thesis_proposal.pdf`, then you should
-again tag your work &mdash; before running a push &mdash; with a tag that
-adheres to the [Semantic Versioning](http://semver.org/) standard. Each time
-that you correctly execute this sequence of commands you will release a new
-version of your document to GitHub that is easily accessible as a PDF to you and
-to your first and second readers. If you are unable to create a tagged release
-using the automated system that Travis provides you can manually create one by
-using GitHub's web interface; to adopt the manual approach please click the
-"Draft a new release" button in the Releases tab of your GitHub repository.
 
 ### Using Docker and GatorGrader
 You can use GatorGrader to see if your lab satisfies the minimum requirements.

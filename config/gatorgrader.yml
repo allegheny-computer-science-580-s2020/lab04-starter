@@ -1,20 +1,24 @@
 ---
-name: cs580s2020_lab02
+name: cs580s2020_lab04
 break: true
 fastfail: false
 indent: 4
 ---
 src:
-    ProposalPresentation.tex:
+    ProposalGraphs.tex:
         CountFileWords --count 200
         ConfirmFileExists
-        MatchFileFragment --fragment "url" --count 1
-        MatchFileFragment --fragment "begin{frame}" --count 5
-        MatchFileFragment --fragment "end{frame}" --count 5
-        MatchFileFragment --fragment "begin{tabular}" --count 1
-        MatchFileFragment --fragment "end{tabular}" --count 1
-        MatchFileFragment --fragment "includegraphics" --count 1
-        MatchFileFragment --fragment "beamerbutton" --count 1
-        MatchFileFragment --fragment "<1->" --count 1
-        MatchFileRegex --regex "block|equation|theorem" --count 1
-CountCommits --count 1
+        MatchFileFragment --fragment "subsection" --count 2
+        MatchFileFragment --fragment "begin{figure}" --count 2
+        MatchFileFragment --fragment "caption" --count 2
+        MatchFileFragment --fragment "TODO" --count 0 --exact
+        MatchFileFragment --fragment "Your Name" --count 0 --exact
+        MatchFileFragment --fragment "Proposal Title" --count 0 --exact
+        MatchFileFragment --fragment "Add your graph and descriptive text  here." --count 0 --exact
+        # MatchFileRegex --regex "block|equation|theorem" --count 1
+figures:
+    graph1.png:
+        ConfirmFileExists
+    graph2.png:
+        ConfirmFileExists
+CountCommits --count 5
