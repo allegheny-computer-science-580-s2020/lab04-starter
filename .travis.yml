@@ -50,4 +50,4 @@ script:
   - gradle clean
   # GatorGrader: see config/gatorgrader.yml for details about all checks;
   # not that grading skips the build task since submitted code may not build
-  # - gradle grade -x build
+  - gradle grade -x build
