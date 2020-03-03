@@ -11,6 +11,7 @@ env:
     - PIPENV_IGNORE_VIRTUALENVS=1
 
 before_install:
+  - sudo apt-get install -y texlive-base texlive-latex-base texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra
   # download gradle as a zip file
   - wget https://services.gradle.org/distributions/gradle-4.6-bin.zip
   - unzip -d $HOME gradle-4.6-bin.zip
@@ -24,9 +25,6 @@ before_install:
   - pip install pipenv
   # do not allow Travis to use standard error for debugging purposes
   - unset _JAVA_OPTIONS
-  - sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends latexmk
-  texlive-fonts-extra texlive-fonts-recommended texlive-latex-base texlive-latex-extra
-  texlive-latex-recommended
 
 # cache to improve build speed
 before_cache:
