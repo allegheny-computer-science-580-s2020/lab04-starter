@@ -11,10 +11,6 @@ env:
     - PIPENV_IGNORE_VIRTUALENVS=1
 
 before_install:
-  # get Latex 
-  - sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends latexmk
-  texlive-fonts-extra texlive-fonts-recommended texlive-latex-base texlive-latex-extra
-  texlive-latex-recommended
   # download gradle as a zip file
   - wget https://services.gradle.org/distributions/gradle-4.6-bin.zip
   - unzip -d $HOME gradle-4.6-bin.zip
