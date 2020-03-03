@@ -12,9 +12,9 @@ env:
 
 before_install:
   # get Latex 
-  - sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends latexmk
-  texlive-fonts-extra texlive-fonts-recommended texlive-latex-base texlive-latex-extra
-  texlive-latex-recommended
+  #- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends latexmk
+  #texlive-fonts-extra texlive-fonts-recommended texlive-latex-base texlive-latex-extra
+  #texlive-latex-recommended
   # download gradle as a zip file
   - wget https://services.gradle.org/distributions/gradle-4.6-bin.zip
   - unzip -d $HOME gradle-4.6-bin.zip
@@ -45,8 +45,9 @@ before_script:
 
 script:
   # pdflatex
-  - mkdir _build
-  - latexmk -pdf -outdir=_build src/ProposalGraphs.tex
+  #- mkdir _build
+  #- latexmk -pdf -outdir=_build src/ProposalGraphs.tex
+  - pdflatex -interaction=nonstopmode src/ProposalGraphs.tex
   # Java: see build.gradle for details about the build configuration
   - gradle --version
   - gradle clean
