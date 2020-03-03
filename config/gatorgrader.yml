@@ -1,0 +1,20 @@
+---
+name: cs580s2020_lab02
+break: true
+fastfail: false
+indent: 4
+---
+src:
+    ProposalPresentation.tex:
+        CountFileWords --count 200
+        ConfirmFileExists
+        MatchFileFragment --fragment "url" --count 1
+        MatchFileFragment --fragment "begin{frame}" --count 5
+        MatchFileFragment --fragment "end{frame}" --count 5
+        MatchFileFragment --fragment "begin{tabular}" --count 1
+        MatchFileFragment --fragment "end{tabular}" --count 1
+        MatchFileFragment --fragment "includegraphics" --count 1
+        MatchFileFragment --fragment "beamerbutton" --count 1
+        MatchFileFragment --fragment "<1->" --count 1
+        MatchFileRegex --regex "block|equation|theorem" --count 1
+CountCommits --count 1
