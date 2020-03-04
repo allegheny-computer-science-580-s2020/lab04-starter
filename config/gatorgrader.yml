@@ -14,7 +14,7 @@ src:
         MatchFileFragment --fragment "TODO" --count 0 --exact
         MatchFileFragment --fragment "Your Name" --count 0 --exact
         MatchFileFragment --fragment "Proposal Title" --count 0 --exact
-        MatchFileFragment --fragment "Add your graph and descriptive text  here." --count 0 --exact
+        MatchFileFragment --fragment "Add your graph and descriptive text here." --count 0 --exact
         # MatchFileRegex --regex "block|equation|theorem" --count 1
 figures:
     graph1.png:
